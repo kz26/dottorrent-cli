@@ -7,7 +7,7 @@ Documentation
 -------------
 
 Full documentation on how to use dottorrent-cli
-from the command line is available at `dottorrent.readthedocs.io <http://dottorrent-cli.readthedocs.io>`_.
+from the command line is available at `dottorrent-cli.readthedocs.io <http://dottorrent-cli.readthedocs.io>`_.
 
 .. image:: https://readthedocs.org/projects/dottorrent-cli/badge/
 
