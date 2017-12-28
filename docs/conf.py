@@ -55,8 +55,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'dottorrent'
-copyright = '2016, Kevin Zhang'
+project = 'dottorrent-cli'
+copyright = '2017, Kevin Zhang'
 author = 'Kevin Zhang'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -64,7 +64,7 @@ author = 'Kevin Zhang'
 # built documents.
 #
 # The short X.Y version.
-with open('../dottorrent/version.py') as f:
+with open('../dtcli/version.py') as f:
     exec(f.read())
 version = __version__
 # The full version, including alpha/beta/rc tags.
