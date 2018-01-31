@@ -1,5 +1,5 @@
 dottorrent-cli
-==========
+==============
 
 Command-line tool for creating .torrent files, powered by `dottorrent <https://github.com/kz26/dottorrent>`_
 
