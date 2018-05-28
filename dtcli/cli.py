@@ -139,7 +139,9 @@ def main():
 
     output_path = os.path.normpath(args.output_path)
     if os.path.isdir(output_path):
-        path_base = os.path.splitext(os.path.basename(t.path))[0]
+        path_base = os.path.basename(t.path)
+        if os.path.isfile(t.path):
+            path_base = os.path.splitext(path_base)[0]
         save_fn = os.path.join(args.output_path, path_base + '.torrent')
     else:
         save_fn = args.output_path
