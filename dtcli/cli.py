@@ -71,6 +71,16 @@ def main():
         'generated based on the input.')
     args = parser.parse_args()
 
+    output_path = os.path.normpath(args.output_path)
+    if os.path.isdir(output_path):
+        path_base = os.path.basename(t.path)
+        if os.path.isfile(t.path):
+            path_base = os.path.splitext(path_base)[0]
+        save_fn = os.path.join(args.output_path, path_base + '.torrent')
+    else:
+        save_fn = args.output_path
+    f = open(save_fn, 'wb')
+
     if args.piece_size:
         if args.piece_size.isdigit():
             piece_size = int(args.piece_size)
@@ -136,18 +146,8 @@ def main():
 
     t.generate(callback=progress_callback)
     pbar.close()
-
-    output_path = os.path.normpath(args.output_path)
-    if os.path.isdir(output_path):
-        path_base = os.path.basename(t.path)
-        if os.path.isfile(t.path):
-            path_base = os.path.splitext(path_base)[0]
-        save_fn = os.path.join(args.output_path, path_base + '.torrent')
-    else:
-        save_fn = args.output_path
-
-    with open(save_fn, 'wb') as f:
-        t.save(f)
+    t.save(f)
+    f.close()
     print("Info hash: " + t.info_hash)
     print("Torrent file saved to {}".format(save_fn))
 

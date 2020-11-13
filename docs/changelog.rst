@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.10.3
+------
+* Determine writability of output path prior to torrent generation (issue #6)
+
 1.10.2
 ------
 * fix handling when input is a directory containing a period (PR #2)
