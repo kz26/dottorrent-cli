@@ -16,6 +16,7 @@ Installation
 ------------
 
 Stable releases are available on PyPI and can be installed using ``pip``.
+
 ::
 
 	pip install dottorrent-cli
