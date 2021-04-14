@@ -72,9 +72,10 @@ def main():
     args = parser.parse_args()
 
     output_path = os.path.normpath(args.output_path)
+    input_path = os.path.normpath(args.path)
     if os.path.isdir(output_path):
-        path_base = os.path.basename(t.path)
-        if os.path.isfile(t.path):
+        path_base = os.path.basename(input_path)
+        if os.path.isfile(input_path):
             path_base = os.path.splitext(path_base)[0]
         save_fn = os.path.join(args.output_path, path_base + '.torrent')
     else:
