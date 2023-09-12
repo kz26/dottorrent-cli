@@ -49,6 +49,9 @@ def main():
         '--private', '-p', action='store_true', help='set private flag '
         '(useful for private trackers)')
     parser.add_argument(
+        '--xseed', '-xs', action='store_true', help='set entropy to random integer '
+        '(useful for private trackers)')
+    parser.add_argument(
         '--source', help='source string (useful for private trackers)')
     parser.add_argument(
         '--exclude', '-x', help='filename patterns that should be excluded '
@@ -105,6 +108,7 @@ def main():
                            web_seeds=args.web_seeds,
                            piece_size=piece_size,
                            private=args.private,
+                           xseed=args.xseed,
                            comment=args.comment,
                            creation_date=creation_date,
                            include_md5=args.md5,
@@ -122,6 +126,7 @@ def main():
     for x in t.web_seeds:
         print("Web seed: " + x)
     print("Private torrent: {}".format(args.private))
+    print("xseed torrent: {}".format(args.xseed))
     if args.comment:
         print("Comment: " + t.comment)
     if creation_date:
